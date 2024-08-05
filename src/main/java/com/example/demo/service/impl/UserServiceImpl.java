@@ -37,8 +37,8 @@ import static com.example.demo.constant.ApiConstant.API_COMMUNE;
 import static com.example.demo.constant.ApiConstant.API_DISTRICT;
 import static com.example.demo.constant.ApiConstant.API_PROVINCE;
 import static com.example.demo.constant.ApiConstant.HTM;
-import static com.example.demo.constant.GoogleConstant.GOOGLE_CLIENT_ID;
-import static com.example.demo.constant.GoogleConstant.GOOGLE_CLIENT_SECRET;
+import static com.example.demo.constant.GoogleConstant.GCLI;
+import static com.example.demo.constant.GoogleConstant.GCLS;
 import static com.example.demo.constant.GoogleConstant.GOOGLE_GRANT_TYPE;
 import static com.example.demo.constant.GoogleConstant.GOOGLE_LINK_GET_TOKEN;
 import static com.example.demo.constant.GoogleConstant.GOOGLE_LINK_GET_USER_INFO;
@@ -75,8 +75,8 @@ public class UserServiceImpl implements UserService {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(GOOGLE_LINK_GET_TOKEN))
                 .POST(
-                        HttpRequest.BodyPublishers.ofString("client_id=" + GOOGLE_CLIENT_ID +
-                                "&client_secret=" + GOOGLE_CLIENT_SECRET +
+                        HttpRequest.BodyPublishers.ofString("client_id=" + GCLI +
+                                "&client_secret=" + GCLS +
                                 "&redirect_uri=" + GOOGLE_REDIRECT_URI +
                                 "&code=" + code +
                                 "&grant_type=" + GOOGLE_GRANT_TYPE)
